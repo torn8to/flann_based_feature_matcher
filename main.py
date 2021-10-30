@@ -27,6 +27,7 @@ def main():
     query_params = dict(checks=50)
     flann = cv.FlannBasedMatcher(index_params, query_params)
 
+
     kp1, des1 = sift.detectAndCompute(comparator_img, None)
     kp2, des2 = sift.detectAndCompute(test_img, None)
 
