@@ -36,7 +36,7 @@ def main():
     matchesMask = [[0, 0] for i in range(len(matches))]
 
     for i, (m, n) in enumerate(matches):
-        if m.distance < 0.8 * n.distance:
+        if m.distance < 0.5 * n.distance:
             matchesMask[i] = [1, 0]
    
     draw_params = dict(matchColor=(0, 255, 0),
@@ -45,7 +45,7 @@ def main():
                        flags=0)
 
     img3 = cv.drawMatchesKnn(comparator_img, kp1, test_img, kp2, matches, None, **draw_params)
-    plt.title('.8 threshold')
+    plt.title('.5 threshold')
     plt.imshow(img3)
     plt.show()
 
